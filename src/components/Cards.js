@@ -200,7 +200,7 @@ const Cards = () => {
       </div>
 
       <div className="box">
-        {animals.forEach((card, index) => (
+        {animals.map((card, index) => (
           <Game
             key={index}
             card={card}

@@ -1,18 +1,16 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import About from './pages/About';
-import Home from './pages/Home';
+import React from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
 
 const App = () => {
-
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        {/* configuration des routes en fonction du lien introduit */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
