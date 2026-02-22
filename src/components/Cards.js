@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Game from "./Game";
 import Swal from "sweetalert2";
 let CARDS = [
@@ -118,7 +118,7 @@ const Cards = () => {
   };
   const resetBeforeEndOfGame = () => {
     const srcAnimal = "./logo192.png";
-    animals.map((card, index) => {
+    animals.forEach((card, index) => {
       if (card.src !== srcAnimal) {
         changeSrcImg(card.id);
       }
@@ -138,14 +138,14 @@ const Cards = () => {
   };
   const changeSrcImg = (idnbr) => {
     console.log("changeSrcImg");
-    const pos = animals.map((i) => i.id).indexOf(idnbr);
+    const pos = animals.forEach((i) => i.id).indexOf(idnbr);
     const a = animals[pos].src1;
     animals[pos].src1 = animals[pos].src;
     animals[pos].src = a;
   };
   const verifyNbrTwins = () => {
     let cpt = 0;
-    animals.map((animal, index) => {
+    animals.forEach((animal, index) => {
       if (animal.twinFind) {
         cpt += 1;
       }
@@ -153,7 +153,7 @@ const Cards = () => {
     return cpt / 2;
   };
   const resetGame = () => {
-    animals.map((card, index) => {
+    animals.forEach((card, index) => {
       changeSrcImg(card.id);
       card.twinFind = false;
     });
@@ -200,7 +200,7 @@ const Cards = () => {
       </div>
 
       <div className="box">
-        {animals.map((card, index) => (
+        {animals.forEach((card, index) => (
           <Game
             key={index}
             card={card}
